@@ -7,7 +7,7 @@ export default function ItemList(props) {
   return (
     <div className="itemlist">
       <Flex>
-        {console.log(props)}
+        
         {props.listaProductos.map((product) => (
           <Item
             key={product.id}

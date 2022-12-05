@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import  getItems from "../../service/APICall";
-import  getItemsCategory from "../../service/APICall";
+import getItems from "../../service/APICall";
+import {getItemsCategory} from "../../service/APICall";
 import "./item.css";
 import ItemList from "./ItemList";
 
 export default function ItemListContainer() {
   let [listaProductos, setListaProductos] = useState([]);
-  const categoryID = useParams().categoryID
+  let categoryID = useParams().categoryID;
+  console.log("SOY CATEGORY ID", categoryID);
 
   useEffect(() => {
     if (categoryID === undefined) {
@@ -15,9 +16,10 @@ export default function ItemListContainer() {
         setListaProductos(respuesta);
       });
     } else {
-      getItemsCategory(categoryID).then((respuestaFiltrada) =>
-        setListaProductos(respuestaFiltrada)
-      );
+      getItemsCategory(categoryID).then((respuestaFiltrada) => {
+        console.log(respuestaFiltrada);
+        setListaProductos(respuestaFiltrada);
+      });
     }
   }, [categoryID]);
 

@@ -2,7 +2,7 @@ import productos from "../data/db";
 
 //FUNCION APICALL, DEVUELVE LA PROMESA DE TRAER DE LA BD EN 2 SEGUNDOS LA INFO DE PRODUCTOS
 //Cuando la llame desde otro lado me uno a la promesa por medio de .then .catch .finally
-export default function getItems() {
+function getItems() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(productos);
@@ -20,8 +20,11 @@ export function getItemsCategory(categoryID) {
       return item.category === categoryID;
     });
 
-    if (itemsFound.length > 0) resolve(itemsFound);
-    else reject("No hay productos para esta categoría.");
+    if (itemsFound.length > 0) {
+      resolve(itemsFound);
+    } else {
+      reject("No hay productos para esta categoría.");
+    }
   });
 }
 
@@ -32,10 +35,10 @@ export function getSingleItem(itemID) {
       let itemFound = productos.find(
         (itemInArray) => itemInArray.id === parseInt(itemID)
       );
-      if (itemFound) 
-        resolve(itemFound);
-      else 
-        reject("Item no encontrado");
+      if (itemFound) resolve(itemFound);
+      else reject("Item no encontrado");
     }, 500);
   });
 }
+
+export default getItems;
