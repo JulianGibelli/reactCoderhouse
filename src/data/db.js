@@ -253,6 +253,83 @@ const productos = [
     thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30990_Auriculares_HyperX_Cloud_Flight_Black_Wireless_ee2bc8f7-med.jpg",
     
   },
+  {
+    id: 24,
+    title: "Auriculares HyperX Cloud Revolver",
+    description:
+      "Auriculares HyperX Cloud Revolver 7.1",
+    price: 23450,   
+    brand: "HyperX",
+    category: "perifericos",
+    thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30992_Auriculares_HyperX_Cloud_Revolver_7.1_3dd11be0-med.jpg",
+    
+  },
+  {
+    id: 25,
+    title: "Auriculares LOgitech H151",
+    description:
+      "Auriculares Logitech H151 PC STEREO",
+    price: 3310,   
+    brand: "Logitech",
+    category: "perifericos",
+    thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_4421_Auriculares_Logitech_H151_PC_STEREO_daf4e845-med.jpg",
+    
+  },  
+  {
+    id: 26,
+    title: "Teclado Redragon K509",
+    description:
+      "Teclado Redragon K509 Dyaus Español Retroiluminado 7 Colores",
+    price: 5000,   
+    brand: "Redragon",
+    category: "perifericos",
+    thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_33398_Teclado_Redragon_K509_Dyaus_Espa__ol_Retroiluminado_7_Colores_8b303511-med.jpg",
+    
+  },
+  {
+    id: 27,
+    title: "Teclado Redragon Shiva K512",
+    description:
+      "Teclado Redragon Shiva K512 White RGB Español",
+    price: 6550,   
+    brand: "Redragon",
+    category: "perifericos",
+    thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_28592_Teclado_Redragon_Shiva_K512_White_RGB_Espa__ol_28459d4e-med.jpg",
+    
+  },
+  {
+    id: 28,
+    title: "Teclado HP HyperX Alloy",
+    description:
+      "Teclado HP HyperX Alloy CORE RGB LA",
+    price: 8500,   
+    brand: "HyperX",
+    category: "perifericos",
+    thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_26222_Teclado_HP_HyperX_Alloy_CORE_RGB_LA_dd3acd58-med.jpg",
+    
+  },
+  {
+    id: 29,
+    title: "Teclado Redragon Kumara K552",
+    description:
+      "Teclado Mecanico Redragon Kumara K552-KR White Rainbow Outemu RED ESP",
+    price: 8800,   
+    brand: "Redragon",
+    category: "perifericos",
+    thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29800_Teclado_Mecanico_Redragon_Kumara_K552-KR_White_Rainbow_Outemu_RED_ESP_cd947367-med.jpg",
+    
+  },
+  {
+    id: 30,
+    title: "Teclado Logitech K835",
+    description:
+      "Teclado Mecanico Logitech K835 TKL Switch Blue",
+    price: 10950,   
+    brand: "Logitech",
+    category: "perifericos",
+    thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34843_Teclado_Mecanico_Logitech_K835_TKL_Switch_Blue_3fcbc6e8-med.jpg",
+    
+  },
   
   
 ];

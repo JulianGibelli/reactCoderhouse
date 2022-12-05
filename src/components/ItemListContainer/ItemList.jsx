@@ -15,7 +15,7 @@ export default function ItemList(props) {
             title={product.title}
             img={product.thumbnail}
             price={product.price}
-            condition={product.condition}
+            description={product.description}
           />
         ))}
       </Flex>
