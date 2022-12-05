@@ -10,17 +10,13 @@ function App() {
       <header>
         <NavBar></NavBar>
       </header>
-      <Routes>
-        
+      <Routes>        
         <Route path='/' element={<ItemListContainer/>} />
 
         <Route path='/category/:categoryID' element={<ItemListContainer/>} />
 
-        <Route path='*' element={<h1>404: Page not found</h1>} />
-          
-       
-      </Routes>
-    
+        <Route path='*' element={<h1>404: Page not found</h1>} />      
+      </Routes>    
     </BrowserRouter>
     
   );
