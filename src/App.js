@@ -7,13 +7,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <header>
+      <header className='mb-3'>
         <NavBar></NavBar>
       </header>
       <Routes>        
         <Route path='/' element={<ItemListContainer/>} />
 
         <Route path='/category/:categoryID' element={<ItemListContainer/>} />
+        <Route path='/item/:itemID' element={<h1>Details work in progress</h1>} />
 
         <Route path='*' element={<h1>404: Page not found</h1>} />      
       </Routes>    

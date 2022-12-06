@@ -7,7 +7,7 @@ function getItems() {
     setTimeout(() => {
       resolve(productos);
       reject("error en la api");
-    }, 2000);
+    }, 500);
   });
   /* return fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1648") */
 }

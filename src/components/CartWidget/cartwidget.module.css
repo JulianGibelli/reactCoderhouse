@@ -1,0 +1,9 @@
+.logo {
+  color: #003049;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.logo:hover {
+  font-size: 20px;
+}

@@ -10,7 +10,7 @@ export default function NavBar() {
   const [isActive, setisActive] = React.useState(false);
   return (
     <nav
-      className="navbar has-background-grey-light"
+      className="navbar is-warning is-fixed-top"
       role="navigation"
       aria-label="main navigation"
     >
@@ -41,13 +41,13 @@ export default function NavBar() {
         className={`navbar-menu ${isActive ? "is-active" : ""}`}
       >
         <div className="navbar-start">
-          <NavLink className="my-auto mx-2" to="/category/placasvideo">
+          <NavLink className="my-auto mx-2 has-text-weight-bold" to="/category/placasvideo">
             Placas de video
           </NavLink>
-          <NavLink className="my-auto mx-2" to="/category/procesadores">
+          <NavLink className="my-auto mx-2 has-text-weight-bold" to="/category/procesadores">
             Procesadores
           </NavLink>
-          <NavLink className="my-auto mx-2" to="/category/perifericos">
+          <NavLink className="my-auto mx-2 has-text-weight-bold" to="/category/perifericos">
             Perifericos
           </NavLink>
         </div>
