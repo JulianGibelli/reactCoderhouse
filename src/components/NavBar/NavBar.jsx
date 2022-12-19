@@ -4,7 +4,7 @@ import { faCode, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 import "./navbar.css";
 import CartWidget from "../CartWidget/CartWidget";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 
 export default function NavBar() {
   const [isActive, setisActive] = React.useState(false);
@@ -15,10 +15,10 @@ export default function NavBar() {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <a className="navbar-item Logo" href="/">
+        <Link className="navbar-item Logo" to="/">
           <FontAwesomeIcon icon={faCode} />
           Shibe's
-        </a>
+        </Link>
 
         <a
           onClick={() => {
