@@ -39,6 +39,7 @@ export default function ItemDetailContainer() {
       <div className="card-detail_detail">
         <h1>{producto.title}</h1>
         <h4 className="priceTag">$ {producto.price}</h4>
+        {producto.oferta && <h2 style={{color:"green"}}>{producto.oferta}% discount</h2>}
         <p>{producto.description}</p>
       </div>
 

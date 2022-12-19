@@ -7,6 +7,7 @@ const productos = [
     description: "Procesador Intel Celeron G5905 3.5GHz Socket 1200",
     price: 8100,    
     brand: "Intel",
+    oferta: 50,
     category: "procesadores",
     thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_21913_Procesador_Intel_Celeron_G5905_3.5GHz_Socket_1200_aa932e7b-med.jpg",
     
@@ -18,6 +19,7 @@ const productos = [
       "Procesador Intel Celeron G4900 3.10GHz 1151 9th Gen OEM",
     price: 9920,   
     brand: "Intel",
+    oferta: 30,
     category: "procesadores",
     thumbnail: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29042_Procesador_Intel_Celeron_G4900_3.10GHz_1151_9th_Gen_OEM_509e62dd-med.jpg",
     
