@@ -5,6 +5,8 @@ import "bulma/css/bulma.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemListContainer/ItemDetailContainer";
 import { CartContextProvider } from "./storage/cartContext";
+import CartContainer from "./components/CartContainer/CartContainer";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
 
           <Route path="/category/:categoryID" element={<ItemListContainer />} />
           <Route path="/item/:itemID" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<CartContainer />} />
 
           <Route path="*" element={<h1>404: Page not found</h1>} />
         </Routes>

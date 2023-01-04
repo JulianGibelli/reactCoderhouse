@@ -8,7 +8,6 @@ import ItemList from "./ItemList";
 export default function ItemListContainer() {
   let [listaProductos, setListaProductos] = useState([]);
   let categoryID = useParams().categoryID;
-  console.log("SOY CATEGORY ID", categoryID);
 
   useEffect(() => {
     if (categoryID === undefined) {
@@ -17,7 +16,6 @@ export default function ItemListContainer() {
       });
     } else {
       getItemsCategory(categoryID).then((respuestaFiltrada) => {
-        console.log(respuestaFiltrada);
         setListaProductos(respuestaFiltrada);
       });
     }
