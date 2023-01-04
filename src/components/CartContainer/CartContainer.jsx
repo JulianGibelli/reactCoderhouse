@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { cartContext } from "../../storage/cartContext";
+import Button from "../Button/Button";
 //1. Traer el array del context
 //2. desgloasar o "mapear" los items
 
@@ -23,6 +24,7 @@ function CartContainer() {
                 <p className="title is-4">{item.title}</p>
                 <p className="subtitle is-6">${item.price}</p>
                 <p className="subtitle is-6">Cantidad: {item.count}</p>
+                <Button onButtonTouch={()=>removeItem(item)}>Remove item</Button>
               </div>
             </div>
           </div>

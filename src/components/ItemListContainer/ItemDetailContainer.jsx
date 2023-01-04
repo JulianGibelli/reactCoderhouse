@@ -18,7 +18,6 @@ export default function ItemDetailContainer() {
   useEffect(() => {
     getSingleItem(parametroURL)
       .then((res) => {
-        console.log(res);
         setProducto(res);
       })
       .catch((err) => {

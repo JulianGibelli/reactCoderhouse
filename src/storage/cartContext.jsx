@@ -46,6 +46,24 @@ function CartContextProvider(props) {
     return totalItemsInCart;
   }
 
+  function removeItem(item){
+    console.log("Item a eliminar: ",item.id)
+    //me guardo la posicion en el carrito del elemento a eliminar
+    let indexItemInCart = cart.findIndex(
+      (itemInContext) => itemInContext.id === item.id
+    );
+    //me hago un nuevo carrito el cual voy a poder modificar
+    let newCart = [...cart];
+
+    console.log("posicion del item en el nuevo carro para su eliminacion: ",indexItemInCart)  
+    //remuevo segun el index el elemento de mi array nuevo
+    newCart.splice(indexItemInCart,1)
+    //con el array modificado lo seteo como nuevo carrito sin ese elemento
+    setCart(newCart)
+
+
+  }
+
   //retorno mi provider con el value asociado, que es la informacion a la cual los componentes globalmente se van a poder conectar
   return (
     <Provider
@@ -54,6 +72,7 @@ function CartContextProvider(props) {
         addToCart,
         totalItemsInCart,
         totalItemsInCartfn,
+        removeItem
       }}
     >
       {props.children}
