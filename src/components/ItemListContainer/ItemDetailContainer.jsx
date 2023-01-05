@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams,Link } from "react-router-dom";
-import { getSingleItem } from "../../service/APICall";
+import { getSingleItem } from "../../service/firebase";
 import Item from "./Item";
 import { cartContext } from "../../storage/cartContext";
 import { useContext } from "react";

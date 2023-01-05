@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import getItems from "../../service/APICall";
-import {getItemsCategory} from "../../service/APICall";
+import {getItems} from "../../service/firebase";
+import {getItemsCategory} from "../../service/firebase";
 import "./item.css";
 import ItemList from "./ItemList";
 

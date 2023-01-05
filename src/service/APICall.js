@@ -2,15 +2,16 @@ import productos from "../data/db";
 
 //FUNCION APICALL, DEVUELVE LA PROMESA DE TRAER DE LA BD EN 2 SEGUNDOS LA INFO DE PRODUCTOS
 //Cuando la llame desde otro lado me uno a la promesa por medio de .then .catch .finally
-function getItems() {
+/* function getItems() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(productos);
       reject("error en la api");
     }, 500);
   });
-  /* return fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1648") */
-}
+  
+}*/ 
+
 
 /* va a buscar en la BD segun id de categoria, filtra (si hay) y devuelvo promise filtrado */
 /* de lo contrario devuelve un reject, informando que no hay elementos de tal categoria */
@@ -29,7 +30,7 @@ export function getItemsCategory(categoryID) {
 }
 
 /* buscara unicamente por el ID del item solicitado, devolviendo una promesa ya que es busqueda asincrona en la BD, puede estar como no */
-export function getSingleItem(itemID) {
+/* export function getSingleItem(itemID) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       let itemFound = productos.find(
@@ -39,6 +40,6 @@ export function getSingleItem(itemID) {
       else reject("Item no encontrado");
     }, 500);
   });
-}
+} */
 
-export default getItems;
+
