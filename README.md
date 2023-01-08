@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Shibe's shop
+![N|Solid](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.drupal.org%2Ffiles%2Fproject-images%2Freact.jpg&f=1&nofb=1&ipt=66f5112329aa4307fb787eecdda154f4d0a8c48a8fe84d5edd8c9bdd96a82ac1&ipo=images) ![N|Solid2](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.carbonads.net%2Fhubfs%2Fcarbon%2Fimages%2Fpublishers%2Flogo_bulma%402x.png&f=1&nofb=1&ipt=5f61cea592342ba49c50d8cdd53c1dd4b6af80dd2bae0adc16034d07281b4521&ipo=images) ![N|Solid3](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fskill_page%2Fcontent%2Flogo_file%2Flogo%2F6007%2FFirebase-f073f7a685fca6ae89b29f42109e7859.png&f=1&nofb=1&ipt=c4eefb75b460aeabf654a2f95072231f767f58591e6925d19294f6a12a643655&ipo=images)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
+Shibe's shop es un ecommerce de productos informáticos desarrollado en React. Utiliza Bulma como framework de estilos CSS y Firebase como base de datos. En nuestro sitio encontrarás una amplia selección de periféricos, procesadores y placas de vídeo de las mejores marcas del mercado.
 
-## Available Scripts
+## Instalación
+Para instalar este proyecto en tu equipo local, sigue estos pasos:
 
-In the project directory, you can run:
+- Clona este repositorio usando git clone https://github.com/JulianGibelli/reactCoderhouse.git
+- Instala las dependencias necesarias ejecutando npm install en el directorio del proyecto
+- Inicia la aplicación ejecutando `npm start`
 
-### `npm start`
+## Uso
+Una vez que la aplicación se haya iniciado, podrás ver el catálogo de productos en la página principal. Puedes utilizar el menú de navegación para acceder a otras páginas, como la de carrito de compras o la de pago, o para navegar entre distintas categorías de periféricos, procesadores y placas de vídeo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Contribución
+Si deseas contribuir al proyecto, por favor envía una solicitud de extracción. Asegúrate de seguir nuestro código de conducta y de realizar tus cambios en una rama separada antes de enviar tu solicitud.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Licencia
+Este proyecto está licenciado bajo la licencia MIT. 
