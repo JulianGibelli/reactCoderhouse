@@ -14,6 +14,8 @@ Para instalar este proyecto en tu equipo local, sigue estos pasos:
 ## Uso
 Una vez que la aplicación se haya iniciado, podrás ver el catálogo de productos en la página principal. Puedes utilizar el menú de navegación para acceder a otras páginas, como la de carrito de compras o la de pago, o para navegar entre distintas categorías de periféricos, procesadores y placas de vídeo.
 
+![gif](https://github.com/JulianGibelli/reactCoderhouse/blob/main/Peek%202023-01-08%2020-24.gif)
+
 ## Contribución
 Si deseas contribuir al proyecto, por favor envía una solicitud de extracción. Asegúrate de seguir nuestro código de conducta y de realizar tus cambios en una rama separada antes de enviar tu solicitud.
 
