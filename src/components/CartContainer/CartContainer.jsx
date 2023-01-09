@@ -11,7 +11,7 @@ function CartContainer() {
   //render condicional -> "carrito vacío , volvé al inicio"
   if (cart.length > 0) {
     console.log("cantidad de carrito", cart.length);
-    return (
+    /* return (
       <div className="p-3">
         {cart.map((item) => (
           <div className="card" style={{ marginTop: "50px" }}>
@@ -26,6 +26,7 @@ function CartContainer() {
                   <p className="title is-4">{item.title}</p>
                   <p className="subtitle is-6">${item.price}</p>
                   <p className="subtitle is-6">Cantidad: {item.count}</p>
+                  <p className="subtitle is-6">Total a pagar: ${item.count*item.price}</p>
                   <Button onButtonTouch={() => removeItem(item)}>
                     Remove item
                   </Button>
@@ -35,11 +36,46 @@ function CartContainer() {
           </div>
         ))}
       </div>
+    ); */
+    return (
+      <div className="container py-5">
+        <table className="table my-5 mx-auto">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Titulo</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Total a pagar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cart.map((item) => (
+              <tr>
+                <td>
+                  <img src={item.thumbnail} alt="Placeholder image" />
+                </td>
+                <td>{item.title}</td>
+                <td>${item.price}</td>
+                <td>Cantidad: {item.count}</td>
+                <td> ${item.count * item.price}</td>
+                <td>
+                  <Button onButtonTouch={() => removeItem(item)}>
+                    Remove item
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     );
   }
   return (
     <Link to="/">
-      <h2 style={{ marginTop: "100px",marginLeft:"100px" }}>No hay elementos en tu carrito!</h2>
+      <h2 style={{ marginTop: "100px"}} className="mx-6">
+        No hay elementos en tu carrito!
+      </h2>
     </Link>
   );
 }
