@@ -10,7 +10,10 @@ function CartContainer() {
 
   //render condicional -> "carrito vacío , volvé al inicio"
   if (cart.length > 0) {
-    console.log("cantidad de carrito", cart.length);
+    const cantidadTotalAPagar = cart.reduce((total=0, item)=> {
+    
+      return total + (item.count * item.price);
+    }, 0);
     /* return (
       <div className="p-3">
         {cart.map((item) => (
@@ -49,6 +52,16 @@ function CartContainer() {
               <th>Total a pagar</th>
             </tr>
           </thead>
+          <tfoot>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>Total a pagar: ${cantidadTotalAPagar} </th>
+            </tr>
+          </tfoot>
           <tbody>
             {cart.map((item) => (
               <tr>
@@ -57,7 +70,7 @@ function CartContainer() {
                 </td>
                 <td>{item.title}</td>
                 <td>${item.price}</td>
-                <td>Cantidad: {item.count}</td>
+                <td> {item.count}</td>
                 <td> ${item.count * item.price}</td>
                 <td>
                   <Button onButtonTouch={() => removeItem(item)}>
@@ -73,7 +86,7 @@ function CartContainer() {
   }
   return (
     <Link to="/">
-      <h2 style={{ marginTop: "100px"}} className="mx-6">
+      <h2 style={{ marginTop: "100px" }} className="mx-6">
         No hay elementos en tu carrito!
       </h2>
     </Link>
