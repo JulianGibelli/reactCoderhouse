@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 import { cartContext } from "../../storage/cartContext";
 import Button from "../Button/Button";
 //1. Traer el array del context
@@ -10,9 +11,8 @@ function CartContainer() {
 
   //render condicional -> "carrito vacío , volvé al inicio"
   if (cart.length > 0) {
-    const cantidadTotalAPagar = cart.reduce((total=0, item)=> {
-    
-      return total + (item.count * item.price);
+    const cantidadTotalAPagar = cart.reduce((total = 0, item) => {
+      return total + item.count * item.price;
     }, 0);
     /* return (
       <div className="p-3">
@@ -83,14 +83,20 @@ function CartContainer() {
         </table>
       </div>
     );
+  } else {
+    swal({
+      title: "UPS!",
+      text: "No tenes items en tu carrito!",
+      icon: "error",
+      type: "error",
+    }).then((okay) => {
+      if (okay) {
+        window.location.href = "/";
+      } else {
+        window.location.href = "/";
+      }
+    });
   }
-  return (
-    <Link to="/">
-      <h2 style={{ marginTop: "100px" }} className="mx-6">
-        No hay elementos en tu carrito!
-      </h2>
-    </Link>
-  );
 }
 
 export default CartContainer;
