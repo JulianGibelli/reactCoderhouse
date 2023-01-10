@@ -7,9 +7,10 @@ import Item from "./Item";
 import { cartContext } from "../../storage/cartContext";
 import { useContext } from "react";
 import ItemCount from "./ItemCount";
+import Loader from "../Loader/Loader";
 
 export default function ItemDetailContainer() {
-  const [producto, setProducto] = useState({});
+  const [producto, setProducto] = useState();
   const [countInCart, setCountInCart] = useState(0);
 
   const { addToCart, removeItem } = useContext(cartContext);
@@ -18,7 +19,9 @@ export default function ItemDetailContainer() {
   useEffect(() => {
     getSingleItem(parametroURL)
       .then((res) => {
-        setProducto(res);
+        setTimeout(() => {
+          setProducto(res);
+        }, 500);
       })
       .catch((err) => {
         console.log(err);
@@ -30,6 +33,14 @@ export default function ItemDetailContainer() {
     addToCart(producto, count);
   }
 
+  if (!producto) {
+    return (
+      <div style={{ marginTop: "200px",textAlign:"center" }}>
+        <Loader/>
+      </div>
+    );
+  }
+
   return (
     <div className="container py-6 is-flex-direction-column">
       <div className="card-detail_img">
@@ -38,13 +49,24 @@ export default function ItemDetailContainer() {
       <div className="card-detail_detail">
         <h1>{producto.title}</h1>
         <h4 className="priceTag">$ {producto.price}</h4>
-        {producto.oferta && (<h2 style={{ color: "green" }}>{producto.oferta}% discount</h2> )}
+        {producto.oferta && (
+          <h2 style={{ color: "green" }}>{producto.oferta}% discount</h2>
+        )}
         <p>{producto.description}</p>
       </div>
-      
+
       {/* rendering condicional para mostrar o no itemcount y link a carrito*/}
 
-      {countInCart >0 ? <Link to="/cart" style={{display:"block",marginTop:"50px",color:"red"}}>Ir al carrito</Link> : <ItemCount onAddToCart={handleAddToCart} /> }
+      {countInCart > 0 ? (
+        <Link
+          to="/cart"
+          style={{ display: "block", marginTop: "50px", color: "red" }}
+        >
+          Ir al carrito
+        </Link>
+      ) : (
+        <ItemCount onAddToCart={handleAddToCart} />
+      )}
     </div>
   );
 }
