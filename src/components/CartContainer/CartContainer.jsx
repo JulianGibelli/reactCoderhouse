@@ -1,45 +1,52 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
+import { createBuyOrder } from "../../service/firebase";
 import { cartContext } from "../../storage/cartContext";
 import Button from "../Button/Button";
 //1. Traer el array del context
 //2. desgloasar o "mapear" los items
 
 function CartContainer() {
-  const { cart, removeItem } = useContext(cartContext);
+  const { cart, removeItem,clearCart } = useContext(cartContext);
+
+  //TODO: TERMINAR ESTE GENERADOR DE ORDEN AL CLICKEAR FINALIZAR COMPRA!!
+  function handleCheckout(total) {
+    const order = {
+      buyer: {
+        name: "julian",
+        mail: "juligibelli@gmail.com",
+        tel: "454656",
+      },
+      item: cart,
+      total: total,
+      date: new Date(),
+    };
+
+    createBuyOrder(order).then((respuesta) => {
+      console.log("respuesta->", respuesta);
+      swal({
+        title: "orden creada!",
+        text: `Tu ticket es: ${respuesta.id}`,
+        icon: "success",
+      }).then((okay) => {
+        if (okay) {
+          window.location.href = "/";
+          clearCart()
+        } else {
+          window.location.href = "/";
+          clearCart()
+        }
+      });
+    });
+  }
 
   //render condicional -> "carrito vacío , volvé al inicio"
   if (cart.length > 0) {
     const cantidadTotalAPagar = cart.reduce((total = 0, item) => {
       return total + item.count * item.price;
     }, 0);
-    /* return (
-      <div className="p-3">
-        {cart.map((item) => (
-          <div className="card" style={{ marginTop: "50px" }}>
-            <div className="card-image">
-              <figure className="image is-4by3">
-                <img src={item.thumbnail} alt="Placeholder image" />
-              </figure>
-            </div>
-            <div className="card-content">
-              <div className="media">
-                <div className="media-content">
-                  <p className="title is-4">{item.title}</p>
-                  <p className="subtitle is-6">${item.price}</p>
-                  <p className="subtitle is-6">Cantidad: {item.count}</p>
-                  <p className="subtitle is-6">Total a pagar: ${item.count*item.price}</p>
-                  <Button onButtonTouch={() => removeItem(item)}>
-                    Remove item
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    ); */
+
     return (
       <div className="container py-5">
         <table className="table my-5 mx-auto">
@@ -61,10 +68,18 @@ function CartContainer() {
               <th></th>
               <th>Total a pagar: ${cantidadTotalAPagar} </th>
             </tr>
+            <tr>
+              <Button
+                color="green"
+                onButtonTouch={() => handleCheckout(cantidadTotalAPagar)}
+              >
+                Finalizar compra
+              </Button>
+            </tr>
           </tfoot>
           <tbody>
             {cart.map((item) => (
-              <tr>
+              <tr key={item.id}>
                 <td>
                   <img src={item.thumbnail} alt="Placeholder image" />
                 </td>

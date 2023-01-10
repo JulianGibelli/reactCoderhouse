@@ -62,6 +62,11 @@ function CartContextProvider(props) {
 
   }
 
+  function clearCart(){
+    console.log("cart totalmente vaciado")
+    setCart([])
+  }
+
   //retorno mi provider con el value asociado, que es la informacion a la cual los componentes globalmente se van a poder conectar
   return (
     <Provider
@@ -70,7 +75,8 @@ function CartContextProvider(props) {
         addToCart,
         totalItemsInCart,
         totalItemsInCartfn,
-        removeItem
+        removeItem,
+        clearCart
       }}
     >
       {props.children}
