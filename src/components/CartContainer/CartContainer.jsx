@@ -8,16 +8,12 @@ import Button from "../Button/Button";
 //2. desgloasar o "mapear" los items
 
 function CartContainer() {
-  const { cart, removeItem,clearCart } = useContext(cartContext);
+  const { cart, removeItem, clearCart, orden } = useContext(cartContext);
 
   //TODO: TERMINAR ESTE GENERADOR DE ORDEN AL CLICKEAR FINALIZAR COMPRA!!
   function handleCheckout(total) {
     const order = {
-      buyer: {
-        name: "julian",
-        mail: "juligibelli@gmail.com",
-        tel: "454656",
-      },
+      buyer: orden,
       item: cart,
       total: total,
       date: new Date(),
@@ -26,16 +22,16 @@ function CartContainer() {
     createBuyOrder(order).then((respuesta) => {
       console.log("respuesta->", respuesta);
       swal({
-        title: "orden creada!",
+        title: "Orden creada!",
         text: `Tu ticket es: ${respuesta.id}`,
         icon: "success",
       }).then((okay) => {
         if (okay) {
           window.location.href = "/";
-          clearCart()
+          clearCart();
         } else {
           window.location.href = "/";
-          clearCart()
+          clearCart();
         }
       });
     });
@@ -69,12 +65,13 @@ function CartContainer() {
               <th>Total a pagar: ${cantidadTotalAPagar} </th>
             </tr>
             <tr>
-              <Button
-                color="green"
-                onButtonTouch={() => handleCheckout(cantidadTotalAPagar)}
-              >
-                Finalizar compra
-              </Button>
+              {/* 
+              ESTO LLEVAR A FORMULARIO
+              <Button color="green" onButtonTouch={() => handleCheckout(cantidadTotalAPagar)}>Finalizar compra</Button>
+              */}
+              <Link to="/form">
+                <Button color={"red"}>Generar order</Button>
+              </Link>
             </tr>
           </tfoot>
           <tbody>

@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemListContainer/ItemDetailContainer";
 import { CartContextProvider } from "./storage/cartContext";
 import CartContainer from "./components/CartContainer/CartContainer";
-
+import Form from "./components/Form/Form";
 
 
 
@@ -23,6 +23,7 @@ function App() {
           <Route path="/category/:categoryID" element={<ItemListContainer />} />
           <Route path="/item/:itemID" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartContainer />} />
+          <Route path="/form" element={<Form />} />
 
           <Route path="*" element={<h1>404: Page not found</h1>} />
         </Routes>

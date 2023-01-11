@@ -14,6 +14,8 @@ function CartContextProvider(props) {
   //4. creo un estado, aca voy a ir guardando info del carrito
   const [cart, setCart] = useState([]);
 
+  const [orden,setOrden] = useState([])
+
   //funcion para agregar/setear nuevo carrito, recibe item y cantidad
   function addToCart(item, count) {
     let indexItemInCart = cart.findIndex(
@@ -67,6 +69,10 @@ function CartContextProvider(props) {
     setCart([])
   }
 
+  function crearOrden(buyerData){
+    setOrden(buyerData)
+  }
+
   //retorno mi provider con el value asociado, que es la informacion a la cual los componentes globalmente se van a poder conectar
   return (
     <Provider
@@ -76,7 +82,8 @@ function CartContextProvider(props) {
         totalItemsInCart,
         totalItemsInCartfn,
         removeItem,
-        clearCart
+        clearCart,
+        crearOrden
       }}
     >
       {props.children}
