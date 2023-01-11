@@ -2,12 +2,42 @@ import React from "react";
 import Button from "../Button/Button";
 import { cartContext } from "../../storage/cartContext";
 import { useContext } from "react";
+import { createBuyOrder } from "../../service/firebase";
+import swal from "sweetalert";
 
 
 export default function Form() {
 
-  const {crearOrden} = useContext(cartContext)  
+  const {cart,clearCart} = useContext(cartContext)  
 
+  function handleCheckout(buyer) {
+    const order = {
+      buyer: buyer,
+      item: cart,
+      total: cart.reduce((total = 0, item) => {
+        return total + item.count * item.price;
+      }, 0),
+      date: new Date(),
+    };
+
+    createBuyOrder(order).then((respuesta) => {
+      console.log("respuesta->", respuesta);
+
+      swal({
+        title: "Orden creada!",
+        text: `Tu ticket es: ${respuesta.id}`,
+        icon: "success",
+      }).then((okay) => {
+        if (okay) {
+          window.location.href = "/";
+          clearCart();
+        } else {
+          window.location.href = "/";
+          clearCart();
+        }
+      });
+    });
+  }
   function handleOrder(){
     const formEl = document.querySelector("#form")
     formEl.addEventListener("submit",(evt)=>{
@@ -23,7 +53,7 @@ export default function Form() {
             mail: evt.target.email.value
         }
         console.log("soy buyer",buyer)
-        crearOrden(buyer)
+        handleCheckout(buyer)
         
     })
   }
